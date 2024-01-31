@@ -1,0 +1,106 @@
+body{
+    background-color: rgb(123, 161, 168);
+    margin-left: 30%;
+    margin-top: 10%;
+}
+
+.display{
+    display: flex;
+    background-color: rgba(255, 255, 255, 0.783);
+    padding-left: 3.5%;
+    padding-top: 1%;
+    width: 70%;
+    height: 50vh;
+    gap: 30px;
+    border-radius: 10px;
+}
+
+.outputs{
+    background-color: rgb(27, 91, 102) ;
+    width: 50%;
+    height: 40vh;
+    padding-left: 5%;
+    padding-top: 3%;
+    margin-top: 3%;
+    border-radius: 10px;
+    color: white;
+    display: grid;
+    gap: 3px;
+    grid-template-columns: repeat(2, minmax(10px, 1fr));
+
+}
+
+span{
+    color:rgb(122, 171, 180);
+}
+.title{
+    padding-top: 20px;
+    color: rgb(27, 91, 102);
+}
+.bill{
+    
+    margin-top: 10px;
+    height: 4vh;
+    width: 97%;
+}
+
+.select{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: rgb(27, 91, 102);
+}
+.tip {
+    width: 90px;
+    height: 40px;
+    border-radius: 5px;
+    border: 0;
+    background-color: rgb(27, 91, 102);
+    color: white;
+    margin-bottom: 10px;
+    
+    
+}
+
+.tips{
+    display: grid;
+    gap: 3px;
+    grid-template-columns: repeat(3, minmax(10px, 1fr));
+}
+
+.custom{
+    width: 83px;
+    height: 80%;
+    background-color: white;
+    color: rgb(27, 91, 102) ;
+    padding-left: 10px;
+}
+
+.people {
+    margin-top: 5px;
+    color: rgb(27, 91, 102);
+    height: 4vh;
+    width: 100%;
+       
+}
+
+.tip-header{
+    margin-left: 30px;
+    width: 20px;
+}
+.reset{
+    width: 170%;
+    height: 7vh;
+    margin-bottom: 30px;
+    border-radius: 5px;
+    border: 0;
+    color: rgb(27, 91, 102);
+    background-color: rgb(81, 123, 131);
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
+}
