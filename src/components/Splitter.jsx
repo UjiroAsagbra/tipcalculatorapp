@@ -7,6 +7,7 @@ const Splitter = () => {
     const [custom, setCustom] = useState("")
     const [people, setPeople] = useState("")
     const [result, setResult] = useState("0.00")
+    const [bills, setBills] = useState("0.00")
 
     const handleBill = (e)=>{
         setBill(e.target.value)
@@ -27,17 +28,36 @@ const Splitter = () => {
         setPeople(e.target.value)
     }
 
-    const tipPerPerson = (bill, tipPercent, people) => {
-        const billAmount = parseInt(bill)
-        const tipAmount = parseInt(tipPercent)
-        const totalPeople = parseInt(people)
+    const billAmount = parseInt(bill)
+    const tipAmount = parseInt(tipPercent)
+    const totalPeople = parseInt(people)
+    const customTip = parseInt(custom)
 
-        return(tipAmount/100)*billAmount/totalPeople
+
+    const tipPerPerson = (billAmount, tipAmount, totalPeople,customTip) => {
+            let tip = 0
+            if(custom>=1 ){
+                tip = customTip
+            }else{
+                tip = tipAmount
+            }
+             const tipSplit = ((tip/100)*billAmount/totalPeople)
+
+
+                return tipSplit
+    }
+
+    const billPerPerson = (billAmount, tipAmount, totalPeople,customTip) => {
+        const billSplit = tipPerPerson(billAmount, tipAmount, totalPeople,customTip) + billAmount/totalPeople
+            return billSplit
     }
 
     const handleResult = ()=> {
-        setResult(tipPerPerson(bill, tipPercent, people))
-    }
+        setResult(Math.round((tipPerPerson(billAmount, tipAmount, totalPeople,customTip)+ Number.EPSILON)*100)/100)
+        setBills(Math.round((billPerPerson(billAmount, tipAmount, totalPeople,customTip)+ Number.EPSILON)*100)/100)
+    } 
+
+   
 
 
     return(
@@ -54,6 +74,8 @@ const Splitter = () => {
         custom = {custom}
         handleCustom = {handleCustom}
         result= {result}
+        
+        bills={bills}
 
         />
         </>
