@@ -1,32 +1,32 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import BillInput from "./BillInput"
 
 const Splitter = () => {
     const [bill, setBill] = useState("")
     const [tipPercent, setTipPercent] = useState("")
-    const [custom, setCustom] = useState("")
-    const [people, setPeople] = useState("")
-    const [result, setResult] = useState("0.00")
-    const [bills, setBills] = useState("0.00")
+    const [custom, setCustom] = useState()
+    const [people, setPeople] = useState()
+    const [result, setResult] = useState(0.00)
+    const [bills, setBills] = useState(0.00)
 
     const handleBill = (e)=>{
         setBill(e.target.value)
-    }
+    };
 
     const handleCustom = (e) => {
         setCustom(e.target.value)
-    }
+    };
 
 
     const handleTip = (e) => {
         setTipPercent(e.target.name)
         
-      }
+      };
 
 
     const handlePeople = (e)=>{
         setPeople(e.target.value)
-    }
+    };
 
     const billAmount = parseInt(bill)
     const tipAmount = parseInt(tipPercent)
@@ -57,6 +57,20 @@ const Splitter = () => {
         setBills(Math.round((billPerPerson(billAmount, tipAmount, totalPeople,customTip)+ Number.EPSILON)*100)/100)
     } 
 
+    useEffect(() => {
+        handleResult()
+      }, [bill, tipPercent,custom,people]);
+
+
+    
+
+    const reset= ()=> {
+        setBill("")
+        setPeople("")
+        setResult(result)
+        setBills(bills)
+    }
+
    
 
 
@@ -74,8 +88,9 @@ const Splitter = () => {
         custom = {custom}
         handleCustom = {handleCustom}
         result= {result}
-        
+        reset={reset}
         bills={bills}
+        billPerPerson={billPerPerson}
 
         />
         </>

@@ -5,7 +5,10 @@ body{
 }
 
 .display{
-    display: flex;
+    margin-left: 20px;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(2, minmax(482px, 1fr));
     background-color: rgba(255, 255, 255, 0.783);
     padding-left: 3.5%;
     padding-top: 1%;
@@ -50,7 +53,7 @@ span{
     color: rgb(27, 91, 102);
 }
 .tip {
-    width: 90px;
+    width: 150px;
     height: 40px;
     border-radius: 5px;
     border: 0;
@@ -63,16 +66,26 @@ span{
 
 .tips{
     display: grid;
-    gap: 3px;
+    gap:0;
     grid-template-columns: repeat(3, minmax(10px, 1fr));
 }
 
+.tip:focus{
+    background-color: rgb(81, 123, 131);
+    color: rgb(27, 91, 102);
+}
+
 .custom{
-    width: 83px;
+    width: 143px;
     height: 80%;
     background-color: white;
     color: rgb(27, 91, 102) ;
     padding-left: 10px;
+}
+
+.custom:focus{
+    border-color: rgb(81, 123, 131);
+    background-color: white;
 }
 
 .people {
@@ -103,4 +116,56 @@ input[type=number]::-webkit-outer-spin-button {
     -moz-appearance: none;
     appearance: none;
     margin: 0; 
+}
+
+@media screen and (max-width: 900px) {
+    .display {
+        grid-template-columns: repeat(2, minmax(450px, 1fr));
+        height: 60vh;
+        width: 132%;
+    }
+    .outputs{
+        width:50% ;
+        padding-left: 5%;
+        margin-left: 2px;
+        margin-right: 3px;
+    }
+    
+}
+
+@media screen and (max-width: 500px) {
+    .tips {
+        grid-template-columns: repeat(2, minmax(50px, 1fr));
+        gap:1rem;
+        padding-right: 50%;
+     
+    }
+    .tip{
+        width: 100%;
+    }
+    .display {
+        grid-template-columns: repeat(1, minmax(500px, 1fr));
+        height: 105vh;
+        width: 120%;
+        padding-left: 100px;
+        margin-left: 55%;
+    }
+    .bill{
+        width: 50%;
+    }
+    .people{
+        width: 50%;
+    }
+    .outputs{
+        width:50% ;
+        padding-left: 5%;
+        margin-top: -10%;
+        margin-left: 2px;
+        margin-right: 3px;
+    }
+
+    body{
+        margin-left: 3%;
+        margin-top: 30%;
+    }
 }
