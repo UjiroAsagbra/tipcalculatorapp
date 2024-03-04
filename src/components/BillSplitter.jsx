@@ -74,6 +74,7 @@ const Splitter = () => {
     const reset= ()=> {
         setBill('')
         setPeople('')
+        setCustom('')
         setResult('0.00')
         setBills('0.00')
     }
