@@ -184,9 +184,12 @@ input[type=number]::-webkit-outer-spin-button {
         width: 100%;
         height: 45px;
     }
+    .custom{
+      width: 93%;
+    }
     .display {
         grid-template-columns: repeat(1, minmax(320px, 1fr));
-        height: 90vh;
+        height: 100vh;
         width: 107%;
         padding-left: 20px;
         padding-right: 2px;
@@ -201,7 +204,7 @@ input[type=number]::-webkit-outer-spin-button {
     .outputs{
         width:90% ;
         padding-left: 5%;
-        margin-top: -6%;
+        margin-top: -10%;
         margin-left: 0;
         margin-right:0;
     }
