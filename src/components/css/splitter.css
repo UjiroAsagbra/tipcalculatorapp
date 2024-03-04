@@ -71,7 +71,7 @@ span{
 }
 
 .tip:focus{
-    background-color: rgb(81, 123, 131);
+    background-color: #83c5be;
     color: rgb(27, 91, 102);
 }
 
@@ -100,6 +100,14 @@ span{
     margin-left: 30px;
     width: 20px;
 }
+
+.tip-display{
+  color: #0da4b2;
+}
+
+.total-display{
+  color: #0da4b2;
+}
 .reset{
     width: 170%;
     height: 7vh;
@@ -110,6 +118,13 @@ span{
     background-color: rgb(81, 123, 131);
 }
 
+.reset:focus{
+  background-color: #83c5be;
+  color: rgb(27, 91, 102);
+}
+
+
+
 input[type=number]::-webkit-inner-spin-button, 
 input[type=number]::-webkit-outer-spin-button { 
     -webkit-appearance: none;
@@ -118,11 +133,16 @@ input[type=number]::-webkit-outer-spin-button {
     margin: 0; 
 }
 
+
+
 @media screen and (max-width: 900px) {
     .display {
         grid-template-columns: repeat(2, minmax(450px, 1fr));
         height: 60vh;
         width: 132%;
+    }
+    .tips{
+        gap: 1rem
     }
     .outputs{
         width:50% ;

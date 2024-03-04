@@ -1,6 +1,7 @@
 import person from '../components/images/person.png'
-const BillInput = ({handleBill, bill, handleTip, handlePeople, tipPerPerson, billPerPerson, handleResult, people,result, custom, handleCustom,bills,reset}) => {
+const BillInput = ({handleBill, bill, handleTip, handlePeople, tipPerPerson, billPerPerson,  people,result, custom, handleCustom,bills,reset}) => {
    
+
     return (
     <div className='display'>
         <section className='input'>
@@ -71,7 +72,7 @@ const BillInput = ({handleBill, bill, handleTip, handlePeople, tipPerPerson, bil
 
         <section className='outputs'>
             <div className='tip-header'>Tip Amount<span> /person</span></div>
-            <h1 className='tip-display' value={result}>${result}</h1>
+            <h1 className='tip-display'>${result}</h1>
             <div className='tip-header'>Total <span>/person</span></div>
             <h1 className='total-display'>${bills}</h1>
             <button className='reset' onClick={reset}>RESET</button>

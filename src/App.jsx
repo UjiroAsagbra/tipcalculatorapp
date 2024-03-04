@@ -1,11 +1,12 @@
 import './components/css/splitter.css'
-import Splitter from "./components/splitter"
+import BillSplitter from "./components/BillSplitter"
 
 function App() {
+  
    return (
-   <>
-   <Splitter/>
-   </> 
+    <>
+   <BillSplitter />
+   </>
    )
 
 }
